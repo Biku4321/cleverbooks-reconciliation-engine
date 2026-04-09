@@ -4,7 +4,9 @@ const cors    = require("cors");
 const connectDB = require("./config/db");
 
 const app = express();
-app.use(cors());
+app.use(cors({
+  origin: ["https://cleverbooks-reconciliation-engine.vercel.app"] 
+}));
 app.use(express.json());
 
 connectDB();
